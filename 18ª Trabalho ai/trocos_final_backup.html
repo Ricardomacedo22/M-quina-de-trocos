@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+          <video id="gif_nota" class="gif_nota" autoplay loop muted playsinline>
+            <source src="./imagens/gif nota final.mp4"> </video>
+
+          <video id="gif_moeda" class="gif_moeda" autoplay loop muted playsinline>
+            <source src="./imagens/gif moeda (2).mp4"> </video>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>máquina de trocos</title>
+
+    <style>
+        /* css do gif loadind*/
+        @keyframes gif1 {
+            0% { opacity: 1 }
+            100% { opacity: 0 }
+        }
+        .gif1 div {
+            visibility: hidden;
+            left: 47px;
+            top: 24px;
+            position: absolute;
+            animation: gif1 linear 1s infinite;
+            background: #1d0e0b;
+            width: 6px;
+            height: 12px;
+            border-radius: 3px / 3.96px;
+            transform-origin: 3px 26px;
+        }
+        .gif1 div:nth-child(1) {
+            transform: rotate(0deg);
+            animation-delay: -0.9166666666666666s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(2) {
+            transform: rotate(30deg);
+            animation-delay: -0.8333333333333334s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(3) {
+            transform: rotate(60deg);
+            animation-delay: -0.75s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(4) {
+            transform: rotate(90deg);
+            animation-delay: -0.6666666666666666s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(5) {
+            transform: rotate(120deg);
+            animation-delay: -0.5833333333333334s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(6) {
+            transform: rotate(150deg);
+            animation-delay: -0.5s;
+            background: #1d0e0b;
+         }
+        .gif1 div:nth-child(7) {
+            transform: rotate(180deg);
+            animation-delay: -0.4166666666666667s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(8) {
+            transform: rotate(210deg);
+            animation-delay: -0.3333333333333333s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(9) {
+            transform: rotate(240deg);
+            animation-delay: -0.25s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(10) {
+            transform: rotate(270deg);
+            animation-delay: -0.16666666666666666s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(11) {
+            transform: rotate(300deg);
+            animation-delay: -0.08333333333333333s;
+            background: #1d0e0b;
+        }
+        .gif1 div:nth-child(12) {
+            transform: rotate(330deg);
+            animation-delay: 0s;
+            background: #1d0e0b;
+        }
+        .loadingio-spinner-spinner-lyi64kufima {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            overflow: hidden;
+            background: none;
+        }
+        .gif1 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform: translateZ(0) scale(1);
+            backface-visibility: hidden;
+            transform-origin: 0 0;
+        }
+        .gif1 div {
+            box-sizing: content-box;
+        }
+         .appear-gif1 div{
+            visibility: visible;
+            transition: 10s;
+        }
+
+
+
+
+        #money_input{ /*input da quantia*/
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px;
+            height: 20px;
+            font-size: 15px;
+            text-align: center;
+            border: none;
+            outline: none;
+            background: none;
+        }
+        #input_BTN{ /*button para começar o processo de trocar dinheiro*/
+            position: absolute;
+            top: 88%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            margin: none;
+        }
+        #line{ /*linha do input da quantia*/
+            border: .5px solid black;
+            background-color: black;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #box{ /*box que reveste o visor*/
+            border: 2px solid black;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+        }
+
+        #box_mini{ /*visor*/
+            border: 2px solid black;
+            width: 400px;
+            height: 200px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+        }
+        #rel{  /*relogio*/
+            width: 52px;
+            height: 20px;
+            background: none;
+            border: none;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            outline: none;
+            position: absolute;
+            top: 29%;
+            left: 61.2%;
+            transform: translate(-50%, -50%);
+        }
+         #div2{ /*linha direita superior esquerda*/
+            position:absolute;
+            top: 11%;
+            left: 16%;
+            width: 197px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            border-top:2px solid rgb(0, 0, 0);
+            transform: rotate(35deg);
+        }
+        #div3{ /*linha obliqua superior direita*/
+            position:absolute;
+            top: 11%;
+            left: 42.2%;
+            width: 197px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+            border-top:2px solid rgb(0, 0, 0);
+            transform: rotate(35deg);
+        }
+        #div4{ /*linha horizontal superior*/
+            width: 402px;
+            position:absolute;
+            top: 9.5%;
+            left: 26.5%;
+            transform: translate(-50%, -50%);
+            border-top:2px solid rgb(0, 0, 0);
+            transform: rotate(0deg);
+        }
+
+        #div5{ /*linha de fundo*/
+            width: 600px;
+            position:absolute;
+            top: 48%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            border-top:2px solid rgb(0, 0, 0);
+            transform: rotate(90deg);
+        }
+        #div6{ /*linha da entrada de moedas*/
+            width: 47px;
+            position:absolute;
+            top: 60.5%;
+            left: 54.69%;
+            transform: translate(-50%, -50%);
+            border-top:8px solid rgb(216, 216, 216);
+            transform: rotate(90deg);
+            border-radius: 10px;
+        }
+        #div7, .div7{
+            width: 54px;
+            position:absolute;
+            top: 65.5%;
+            left: 56%;
+            transform: translate(-50%, -50%);
+            border-top:13px solid rgb(68, 64, 64);
+            transform: rotate(0deg);
+            border-radius: 10px;
+            visibility: visible;
+        }
+
+        .disapear_div7{
+            visibility: hidden;
+        }
+        .apear_div7{
+            visibility: visible;
+        }
+
+        #btninvisible{
+            visibility: hidden;
+        }
+
+        #teclado{  /*teclado*/
+            position:absolute;
+            top: 66%;
+            left:45%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .botao{  /*botoes do teclado*/
+            width: 35px;
+            height: 35px;
+            margin: 1px;
+            margin-bottom: 2px;
+        }
+
+
+        #btnerase{ /*botao "erase"*/
+            height: 35px;
+            width: 77px;
+        }
+
+
+        #tick_btn{ /*tick button*/
+            width: 20px;
+            height: 20px;
+        }
+
+
+        #initial_btn{/*botão inicial "clique para começar"*/
+            position:absolute;
+            top: 41%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .popup1{ /*popup "insira a quantia"*/
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            visibility: hidden;
+        }
+        .open-popup1, #open-popup1{
+            visibility: visible;
+            top: 41%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .btn-appear{
+            visibility: visible;
+        }
+        .btn-disappear{
+            visibility: hidden;
+        }
+
+        #gif_loading{
+            position: absolute;
+            top: 41%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .gif_moeda{ /*gif das moedas a serem introduzidas*/
+            width:50px;
+            height: 50px;
+            padding-bottom:20%;
+            position:absolute;
+            top: 38%;
+            left: 46%;
+            transform: translate(-50%, -50%);
+            transform: rotate(90deg);
+            visibility: hidden;
+        }
+        .appear-gif-moeda{
+            visibility: visible;
+        }
+        .gif_nota{
+            display:inline;
+            width:150px;
+            height: 150px;
+            padding-bottom:20%;
+            position:absolute;
+            top: 90%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            visibility:hidden;
+        }
+        .appear-gif-nota{
+            visibility: visible;
+        }
+        #resultado li img{
+            width: 4%;
+        }
+		#resultado li { /* display: none*/
+			display: none;
+            width: 100%;
+		}
+		#resultado li.ativa {
+			display: block;
+		}
+        .popup_inserir{
+            width: 200px;
+            height: 120px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            position: absolute;
+            font-size: 13px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);  scale: (0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            border: 0.5px solid #333;
+            box-shadow: 0 5px 5px;
+            transition: transform 0.5s, top 0.5s;
+            visibility: hidden;
+        }
+        .open-popup-inserir{
+            visibility: visible;
+            top: 41%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .seta_obliqua{
+            font-size: 120px;
+            vertical-align: middle;
+            margin: none;
+            border: none;
+            padding: none;
+        }
+        .popup_exchange img{
+            width: 50px;
+            height: 50px;
+        }
+        .popup_exchange{
+            width: 200px;
+            height: 80px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            position: absolute;
+            font-size: 13px;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);  scale: (0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            border: 0.5px solid #333;
+            box-shadow: 0 5px 5px;
+            transition: transform 0.5s, top 0.5s;
+            visibility: hidden;
+        }
+        .open-popup-exchange {
+            visibility: visible;
+            top: 41%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+    </style>
+    </head>
+<body onload="">
+    <script>
+
+function relogio(){
+				var data=new Date();
+				var hor=data.getHours();
+				var min=data.getMinutes();
+				var seg=data.getSeconds();
+
+				if(hor < 10){
+					hor="0"+hor;
+				}
+				if(min < 10){
+					min="0"+min;
+				}
+				if(seg < 10){
+					seg="0"+seg;
+				}
+
+				var horas=hor + ":" + min + ":" + seg;
+
+				document.getElementById("rel").value=horas;
+			}
+
+			var timer=setInterval(relogio,1000);
+
+      //aparecer números no input
+            function displaynum (n1){
+                    money_input.value = money_input.value + n1
+                }
+
+      //delete last letter function.
+
+            function back() {
+                 var value = document.getElementById("money_input").value;
+                 document.getElementById("money_input").value = value.substr(0, value.length - 1);
+            }
+
+            function open_popup1(){
+            document.getElementById("initial_btn").classList.add("btn-disappear");
+            }
+
+            // aparecer o símbolo loading por 1 segundo
+            function open_gif1(){
+            document.getElementById("gif_loading").classList.add("appear-gif1");
+
+            setTimeout(function() {
+              $('#gif_loading').fadeOut('fast');
+              }, 1000);
+
+              setTimeout(() => {
+                document.getElementById("popup1").classList.add("open-popup1")
+              }, 1100);
+
+            }
+
+            // popup "inserir moedas e notas"
+            function open_popup_inserir(){
+                document.getElementById("popup_inserir").classList.add("open-popup-inserir");
+
+                setTimeout(function() {
+              $('#popup_inserir').fadeOut('fast');
+              }, 3500);
+
+                appear_gif_moedas();
+                appear_gif_nota();
+
+                open_popup_exchange();
+
+            }
+
+            // fazer o gif das moedas aparecer
+            function appear_gif_moedas(){
+                document.getElementById("gif_moeda").classList.add("appear-gif-moeda")
+
+                setTimeout(function() {
+              $('#gif_moeda').fadeOut('fast');
+              }, 3500);
+
+            }
+
+            // fazer o gif das notas aparecer
+            function appear_gif_nota(){
+                document.getElementById("gif_nota").classList.add("appear-gif-nota")
+
+                setTimeout(function() {
+              $('#gif_nota').fadeOut('fast');
+              }, 3500);
+
+              setTimeout(function() {
+              $('#div7').fadeOut('fast');
+              }, 0);
+
+              setTimeout(function() {
+              $('#div7').fadeIn('fast');
+              }, 3500);
+
+            }
+
+
+            //popup da troca de dinheiro
+            function open_popup_exchange() {
+                setTimeout(() => {
+                document.getElementById("popup_exchange").classList.add("open-popup-exchange")
+
+				// Chama a função de troca com o valor do input em número
+				troca(+document.getElementById("money_input").value);
+              }, 3600);
+
+                setTimeout(function() {
+              $('#popup_exchange').fadeOut('fast');
+              }, 5000);
+
+            }
+
+			// Percentagens de cada nota e moeda de acordo com o BdP
+			const percentagens = [
+				{ valor: 200,	perc: 0.01065 },
+				{ valor: 100,	perc: 0.0155 },
+				{ valor: 50,	perc: 0.0695 },
+				{ valor: 20,	perc: 0.286 },
+				{ valor: 10,	perc: 0.11 },
+				{ valor: 5,		perc: 0.00885 },
+				{ valor: 2,		perc: 0.124 },
+				{ valor: 1,		perc: 0.22985 },
+				{ valor: 0.5,	perc: 0.0675 },
+				{ valor: 0.2,	perc: 0.028 },
+				{ valor: 0.1,	perc: 0.01785 },
+				{ valor: 0.05,	perc: 0.014 },
+				{ valor: 0.02,	perc: 0.01085 },
+				{ valor: 0.01,	perc: 0.00765 },
+			];
+
+			function troca(total) {
+				let total2 = total * 100; // Para resolver o erro do floating point
+
+				// Calcular quantidades de notas e moedas para o total
+				let quantidades = {};
+				while(total2 > 0) {
+					for (const { valor, perc } of percentagens) {
+						const valor2 = valor * 100; // Para resolver o erro do floating point
+
+						// Ignorar nota ou moeda caso seja maior que o total ou que a moeda mais pequena
+						if (valor2 >= total2 && valor > 0.01) { continue; }
+
+						// Adicionar notas e moedas ao resultado com base nas percentagens
+						do {
+							if (!(valor in quantidades)) { quantidades[valor] = 0; }
+							quantidades[valor]++;
+							total2 -= valor2;
+						} while (total2 > 0 && Math.random() < perc);
+					}
+				}
+
+				// Ordenar resultados por valor da nota ou moeda em número
+				const valoresOrdenados = Object.keys(quantidades).sort((a, b) => (+b) - (+a));
+				let resultados = valoresOrdenados.map(valor => ({ valor: valor, quantidade: quantidades[valor] }));
+
+				// Mostrar notas e moedas de acordo com o resultado
+				for (const resultado of resultados) {
+					const elem = document.getElementById(`valor-${resultado.valor}`);
+					elem.getElementsByClassName('quantidade')[0].textContent = resultado.quantidade + "x";
+					elem.classList.add('ativa');
+				}
+			}
+
+
+    </script>
+
+    <!--Caixa do "trocador"-->
+    <div id="box"></div>
+    <div id="box_mini"></div>
+
+    <!--Relógio de canto-->
+    <input type="text" id="rel" readonly>
+
+
+    <!--Linha direita superior esquerda  div2 -->
+    <div id="div" ></div>
+
+    <!--Linha direita superior direita div3 -->
+    <div id="div"></div>
+
+    <!--Linha direita superior traseira div4 -->
+    <div id="div"></div>
+
+    <!--Linha esquerda comprida div5 -->
+    <div id="div"></div>
+
+    <!--Linha da entrada das moedas-->
+    <div id="div6"></div>
+
+    <!--Linha da entrada das notas-->
+    <div id="div7"></div>
+
+<!-- Input da quantia-->
+    <div class="popup1" id="popup1">
+        <hr id="line" size="1"; width="100 %";> <!-- linha horizontal do input-->
+        <input id="money_input" placeholder="Quantia:"><br> <!-- input da quantia desejada para trocar-->
+    </div>
+
+    <form name="numbers">
+       <br>  <!--Teclado numérico do "trocador"-->
+       <div id="teclado">
+        <input type="button" class="botao" name="btn9" value="9" onclick="displaynum(btn9.value)">
+        <input type="button" class="botao" name="btn8" value="8" onclick="displaynum(btn8.value)">
+        <input type="button" class="botao" name="btn7" value="7" onclick="displaynum(btn7.value)">
+        <button><img style="width: 20px; height: 20px;" onclick="location.reload()" src="./imagens/cross.png"></button><br>
+        <input type="button" class="botao" name="btn6" value="6"  onclick="displaynum(btn6.value)">
+        <input type="button" class="botao" name="btn5" value="5" onclick="displaynum(btn5.value)">
+        <input type="button" class="botao" name="btn4" value="4" onclick="displaynum(btn4.value)">
+
+        <button type="button"><img id="tick_btn"  onclick="open_popup_inserir()" src="./imagens/tick.png"></button><br>
+
+        <input type="button" class="botao" name="btn3" value="3" onclick="displaynum(btn3.value)">
+        <input type="button" class="botao" name="btn2" value="2" onclick="displaynum(btn2.value)">
+        <input type="button" class="botao" name="btn1" value="1" onclick="displaynum(btn1.value)"><br>
+        <input type="button" class="botao" name="btn0" value="0" onclick="displaynum(btn0.value)">
+        <input type="button" id="btnerase" name="btnerase" value="erase" onclick="back()">
+        </div>
+    </form>
+
+<div id="gif_loading" class="gif_loading">
+    <div class="loadingio-spinner-spinner-lyi64kufima"><div class="gif1">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+</div>
+
+        <input id="initial_btn" class="btn-appear" type="button" value="Carregue para iniciar!"
+        onclick="open_popup1(), open_gif1()">
+
+		<ul id="resultado">
+			<li id="valor-200"><div class="quantidade">0</div><img src="./imagens/nota-200.png"></li>
+			<li id="valor-100"><div class="quantidade">0</div><img  src="./imagens/nota-100.png"></li>
+			<li id="valor-50"><div class="quantidade">0</div><img  src="./imagens/nota-50.png"></li>
+			<li id="valor-20"><div class="quantidade">0</div> <div ><img src="./imagens/nota-20.jpg"></div></li>
+			<li id="valor-10"><div class="quantidade">0</div><img  src="./imagens/nota-10.png"></li>
+			<li id="valor-5"><div class="quantidade">0</div><img  src="./imagens/nota-5.png"></li>
+			<li id="valor-2"><div class="quantidade">0</div><img  src="./imagens/moeda-2.jpg"></li>
+			<li id="valor-1"><div class="quantidade">0</div><img  src="./imagens/moeda-1.jpg"></li>
+			<li id="valor-0.5"><div class="quantidade">0</div><img  src="./imagens/moeda-0.5.jpg"></li>
+			<li id="valor-0.2"><div class="quantidade">0</div><img src="./imagens/moeda-0.2.jpeg"></li>
+			<li id="valor-0.1"><div class="quantidade">0</div><img  src="./imagens/moeda-0.10.jpg"></li>
+			<li id="valor-0.05"><div class="quantidade">0</div><img  src="./imagens/moeda-0.05.jpeg"></li>
+			<li id="valor-0.02"><div class="quantidade">0</div><img  src="./imagens/moeda-0.02.jpeg"></li>
+			<li id="valor-0.01"><div class="quantidade">0</div><img  src="./imagens/moeda-0.01.jpg"></li>
+		</ul>
+
+
+<div id="popup_inserir" class="popup_inserir">
+    <h1>Insira as notas e moedas</h1>
+    <span id="seta_obliqua"><img src="./imagens/seta obliqua (pequena).jpg"></span>
+</div>
+
+<div class="popup_exchange" id="popup_exchange">
+    <h1>A fazer a troca!</h1>
+    <img src="./imagens/Spinner-1s-206px.gif">
+</div>
+
+
+
+
+</body>
+</html>
